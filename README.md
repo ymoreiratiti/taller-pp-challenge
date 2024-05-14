@@ -1,6 +1,7 @@
 # Taller PP - Challenge
 
 Code Challenge: Payment Transaction Dashboard
+Try accessing https://taller-pp-challenge.vercel.app/
 
 ## How to use
 
