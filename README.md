@@ -14,5 +14,5 @@ npm run dev
 
 ## References:
 
-- https://github.com/mui/material-ui/tree/master/examples/material-ui-nextjs-pages-router-ts
+- https://github.com/mui/material-ui/tree/master/examples/material-ui-nextjs-ts
 - https://github.com/mui/material-ui/tree/master/docs/data/material/getting-started/templates/dashboard

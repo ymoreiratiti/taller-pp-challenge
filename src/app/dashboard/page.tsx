@@ -1,3 +1,4 @@
+"use client";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -26,9 +27,9 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { createTheme, styled } from "@mui/material/styles";
 import * as React from "react";
-import Copyright from "../src/Copyright";
+import Copyright from "@/components/Copyright";
 
-export const mainListItems = (
+const mainListItems = (
   <React.Fragment>
     <ListItemButton>
       <ListItemIcon>
@@ -63,7 +64,7 @@ export const mainListItems = (
   </React.Fragment>
 );
 
-export const secondaryListItems = (
+const secondaryListItems = (
   <React.Fragment>
     <ListSubheader component="div" inset>
       Saved reports
@@ -139,7 +140,7 @@ const Drawer = styled(MuiDrawer, {
   },
 }));
 
-export default function Home() {
+export default function DashboardPage() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
