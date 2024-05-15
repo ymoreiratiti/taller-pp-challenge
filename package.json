@@ -16,13 +16,13 @@
     "@mui/icons-material": "next",
     "@mui/material": "next",
     "@mui/material-nextjs": "next",
-    "lodash": "^4.17.21",
+    "axios": "^1.6.8",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
   },
   "devDependencies": {
-    "@types/lodash": "^4.17.1",
+    "@types/axios": "^0.14.0",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",

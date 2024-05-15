@@ -1,15 +1,18 @@
-import { DatabaseIntegration } from "../../adapters/database.integration";
-import { IDatabaseIntegration } from "../types/i-database-integration";
+import { mockerPaymentTransactionEntity } from "@/backend/utils/mocker-payment-transaction-entity";
+import { PageEntity } from "@/entities/page-entity";
+import { PaymentTransactionEntity } from "@/entities/payment-transaction.entity";
 
 export class PaymentTransactionService {
-    private readonly database: IDatabaseIntegration;
+    public async getAll(page: number, perPage: number): Promise<PageEntity<PaymentTransactionEntity>> {
+        const allData = mockerPaymentTransactionEntity()
 
-    constructor() {
-        //  TODO: Use DI over here
-        this.database = new DatabaseIntegration();
-    }
-
-    public getAll() {
-        return this.database.getAll();
+        const start = page * perPage;
+        const pageEntity = new PageEntity(
+            page,
+            perPage,
+            allData.length,
+            allData.slice(start, start + perPage)
+        )
+        return pageEntity;
     }
 }

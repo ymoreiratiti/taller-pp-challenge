@@ -1,7 +1,7 @@
-import { PaymentTransactionService } from "@/backend/domains/services/payment-transaction.service"
+import { PaymentTransactionController } from "@/backend/adapters/controllers/payment-transaction.controller";
+
+const controller = new PaymentTransactionController();
 
 export async function GET(request: Request) {
-    const results = await new PaymentTransactionService().getAll()
-
-    return Response.json({ start: 0, limit: 5, results, })
+    return controller.GET(request);
 }
