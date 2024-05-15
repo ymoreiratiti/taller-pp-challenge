@@ -86,8 +86,6 @@ const secondaryListItems = (
   </React.Fragment>
 );
 
-export const drawerWidth: number = 240;
-
 export interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
 }

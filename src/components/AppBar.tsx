@@ -1,7 +1,8 @@
 "use client";
 import MuiAppBar from "@mui/material/AppBar";
 import { styled } from "@mui/material/styles";
-import { AppBarProps, drawerWidth } from "../app/dashboard/layout";
+import { AppBarProps } from "../app/dashboard/layout";
+import { drawerWidth } from "../const";
 
 export const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
