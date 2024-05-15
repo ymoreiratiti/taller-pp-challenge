@@ -13,7 +13,11 @@ import React, { useEffect, useState } from "react";
 
 const apiService = new ApiService();
 
-export function TablePaymentTransaction() {
+export interface TablePaymentTransactionProps {
+  showConnectionError: (show: boolean) => void;
+}
+
+export function TablePaymentTransaction(props: TablePaymentTransactionProps) {
   const [data, setData] = useState<PaymentTransactionEntity[]>([]);
   const [page, setPage] = useState(0);
   const [totalRecords, setTotalRecords] = useState(0);
@@ -21,9 +25,16 @@ export function TablePaymentTransaction() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await apiService.paymentTransactionGetAll(page, rowsPerPage);
-      setData(data.items);
-      setTotalRecords(data.totalItems);
+      try {
+        const data = await apiService.paymentTransactionGetAll(
+          page,
+          rowsPerPage
+        );
+        setData(data.items);
+        setTotalRecords(data.totalItems);
+      } catch (error) {
+        props.showConnectionError(true);
+      }
     };
 
     fetchData();
